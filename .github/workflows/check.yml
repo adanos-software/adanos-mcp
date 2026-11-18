@@ -22,6 +22,6 @@ jobs:
           pipx run check-jsonschema==0.39.0 --schemafile https://agent-plugins.org/schemas/1.0.0/plugin.schema.json plugin.json
           pipx run check-jsonschema==0.39.0 --schemafile https://agent-plugins.org/schemas/1.0.0/mcp.schema.json mcp.json
 
-      # /mcp/stocks serves stocks only. The directories of Anthropic and OpenAI allow no upgrade prompts.
+      # https://adanos.com/mcp serves stocks only. The directories of Anthropic and OpenAI allow no upgrade prompts.
       - name: No crypto and no upsell words
         run: "! git grep -n -i -E 'crypto|coin|bitcoin|upgrade|unlock' -- . ':!.github'"

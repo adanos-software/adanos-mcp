@@ -12,7 +12,7 @@ With the plugin your agent can answer questions like these:
 
 The plugin adds two parts:
 
-- The Adanos MCP server at `https://adanos.com/mcp/stocks`. Its tools only read data.
+- The Adanos MCP server at `https://adanos.com/mcp`. Its tools only read data.
 - The `adanos` skill. It tells the agent which tool answers which question, what each call costs and which period each tool uses by default.
 
 ## Before you start
@@ -61,7 +61,7 @@ Start a new session. Open `/mcps`, select `adanos` and press `i` to sign in.
 Add a remote MCP server with this URL:
 
 ```text
-https://adanos.com/mcp/stocks
+https://adanos.com/mcp
 ```
 
 The transport is Streamable HTTP. Sign-in uses OAuth. The client discovers the OAuth endpoints from the server.
@@ -82,7 +82,7 @@ The transport is Streamable HTTP. Sign-in uses OAuth. The client discovers the O
 
 ## Data and privacy
 
-The plugin sends your agent's tool calls to `https://adanos.com/mcp/stocks`. Nothing else leaves your machine through it. The plugin runs no local code and no hooks.
+The plugin sends your agent's tool calls to `https://adanos.com/mcp`. Nothing else leaves your machine through it. The plugin runs no local code and no hooks.
 
 - Privacy policy: [adanos.com/privacy](https://adanos.com/privacy)
 - Terms: [adanos.com/terms](https://adanos.com/terms)

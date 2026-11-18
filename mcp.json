@@ -3,7 +3,7 @@
   "mcpServers": {
     "adanos": {
       "type": "streamable-http",
-      "url": "https://adanos.com/mcp/stocks"
+      "url": "https://adanos.com/mcp"
     }
   }
 }
