@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "adanos",
+  "version": "0.1.0",
+  "description": "Buzz and sentiment of stocks and ETFs on Reddit, X, News and Polymarket.",
+  "author": {
+    "name": "Adanos Software GmbH",
+    "email": "support@adanos.com",
+    "url": "https://adanos.com"
+  },
+  "homepage": "https://adanos.com",
+  "repository": "https://github.com/adanos-software/adanos-mcp",
+  "license": "MIT",
+  "keywords": ["adanos", "adanos sentiment", "adanos api"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Adanos",
+        "shortDescription": "Stock buzz and sentiment",
+        "longDescription": "Adanos tracks how often stocks and ETFs are discussed on Reddit, X, News and Polymarket and how positive or negative that talk is. Ask which stocks are discussed today, how one stock looks on each source, why it is discussed, how several stocks compare and how the whole market feels. Every tool reads data and changes nothing. Each call counts against the API quota of your Adanos plan. get_mentions and analyze_text are on the Professional plan only.",
+        "developerName": "Adanos Software GmbH",
+        "category": "Finance",
+        "capabilities": ["Read"],
+        "websiteURL": "https://adanos.com",
+        "supportURL": "https://adanos.com/support",
+        "privacyPolicyURL": "https://adanos.com/privacy",
+        "termsOfServiceURL": "https://adanos.com/terms",
+        "defaultPrompt": [
+          "Which stocks are most discussed on Reddit today?",
+          "How is NVDA discussed on Reddit, X and News this week?",
+          "Compare the buzz of AAPL, MSFT and GOOGL on X."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
+}

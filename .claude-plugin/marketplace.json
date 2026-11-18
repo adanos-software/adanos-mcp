@@ -1,0 +1,17 @@
+{
+  "name": "adanos",
+  "description": "The Adanos plugin: stock buzz and sentiment for your agent.",
+  "owner": {
+    "name": "Adanos Software GmbH",
+    "email": "support@adanos.com",
+    "url": "https://adanos.com"
+  },
+  "plugins": [
+    {
+      "name": "adanos",
+      "source": "./",
+      "description": "Buzz and sentiment of stocks and ETFs on Reddit, X, News and Polymarket.",
+      "category": "finance"
+    }
+  ]
+}

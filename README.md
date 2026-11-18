@@ -1,0 +1,106 @@
+# Adanos plugin
+
+This plugin connects your agent to [Adanos](https://adanos.com). Adanos measures how often stocks and ETFs are discussed on Reddit, X, News and Polymarket. It also measures how positive or negative that talk is.
+
+With the plugin your agent can answer questions like these:
+
+- Which stocks are most discussed on Reddit today?
+- How is NVDA discussed on Reddit, X and News this week?
+- Why is TSLA discussed right now?
+- How does the buzz of AAPL, MSFT and GOOGL compare on X?
+- How does the stock market feel today?
+
+The plugin adds two parts:
+
+- The Adanos MCP server at `https://adanos.com/mcp/stocks`. Its tools only read data.
+- The `adanos` skill. It tells the agent which tool answers which question, what each call costs and which period each tool uses by default.
+
+## Before you start
+
+You need an Adanos account. A free account works. Your agent signs you in through a browser window. The plugin holds no API key.
+
+Each tool call costs API calls from the monthly quota of your plan. `get_mentions` and `analyze_text` are on the Professional plan only. The plans are at [adanos.com/pricing](https://adanos.com/pricing).
+
+## Install
+
+### Claude Code
+
+```bash
+claude plugin marketplace add adanos-software/adanos-mcp
+claude plugin install adanos@adanos
+```
+
+Start a new session. Run `/mcp`, select `plugin:adanos:adanos` and sign in.
+
+### Codex
+
+```bash
+codex plugin marketplace add adanos-software/adanos-mcp
+codex plugin add adanos@adanos
+codex mcp login adanos
+```
+
+### Cursor
+
+```bash
+git clone https://github.com/adanos-software/adanos-mcp.git ~/.cursor/plugins/local/adanos
+```
+
+Run **Developer: Reload Window**. Open **Customize** to check that the `adanos` skill and MCP server are there.
+
+### Grok Build
+
+```bash
+grok plugin install adanos-software/adanos-mcp --trust
+```
+
+Start a new session. Open `/mcps`, select `adanos` and press `i` to sign in.
+
+### Other clients
+
+Add a remote MCP server with this URL:
+
+```text
+https://adanos.com/mcp/stocks
+```
+
+The transport is Streamable HTTP. Sign-in uses OAuth. The client discovers the OAuth endpoints from the server.
+
+## Tools
+
+| Tool | What it answers | API calls |
+| --- | --- | --- |
+| `get_trending` | The most discussed stocks, ETFs, sectors or countries on one source | 1 |
+| `get_ticker` | Buzz and sentiment of one stock per source, with short snippets | 1 per source |
+| `explain_ticker` | Why a stock is discussed, per source | 1 per source |
+| `compare_tickers` | Up to 10 stocks side by side on one source | 1 |
+| `get_market_sentiment` | The mood of the whole stock market per source | 1 per source |
+| `search` | Find a stock or ETF by name or ticker | 1 |
+| `get_mentions` | The latest posts about one stock on one source. Professional plan only | 1 |
+| `analyze_text` | The sentiment of a finance text. Professional plan only | 1 |
+| `get_usage` | Your plan and the calls you have left | 0 when signed in |
+
+## Data and privacy
+
+The plugin sends your agent's tool calls to `https://adanos.com/mcp/stocks`. Nothing else leaves your machine through it. The plugin runs no local code and no hooks.
+
+- Privacy policy: [adanos.com/privacy](https://adanos.com/privacy)
+- Terms: [adanos.com/terms](https://adanos.com/terms)
+- Support: [adanos.com/support](https://adanos.com/support) or support@adanos.com
+
+## Files
+
+| File | Read by |
+| --- | --- |
+| `mcp.json` | Codex, Cursor (Agent Plugins format) |
+| `.mcp.json` | Claude Code, Grok Build. Same content as `mcp.json` |
+| `plugin.json` | Codex, Cursor (Agent Plugins format) |
+| `.claude-plugin/plugin.json` | Claude Code, Grok Build |
+| `.claude-plugin/marketplace.json` | Claude Code |
+| `.agents/plugins/marketplace.json` | Codex |
+| `skills/adanos/SKILL.md` | All clients |
+| `assets/icon.png` | The listings of the Anthropic and OpenAI directories |
+
+## License
+
+MIT. See [LICENSE](LICENSE).

@@ -1,0 +1,19 @@
+{
+  "name": "adanos",
+  "version": "0.1.0",
+  "description": "Buzz and sentiment of stocks and ETFs on Reddit, X, News and Polymarket.",
+  "author": {
+    "name": "Adanos Software GmbH",
+    "email": "support@adanos.com",
+    "url": "https://adanos.com"
+  },
+  "homepage": "https://adanos.com",
+  "repository": "https://github.com/adanos-software/adanos-mcp",
+  "license": "MIT",
+  "keywords": ["adanos", "adanos sentiment", "adanos api"],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/adanos-software/adanos-mcp#readme",
+  "supportUrl": "https://adanos.com/support",
+  "privacyPolicyUrl": "https://adanos.com/privacy",
+  "termsOfServiceUrl": "https://adanos.com/terms"
+}
