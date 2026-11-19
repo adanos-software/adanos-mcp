@@ -19,7 +19,7 @@ The plugin adds two parts:
 
 You need an Adanos account. A free account works. Your agent signs you in through a browser window. The plugin holds no API key.
 
-Each tool call costs API calls from the monthly quota of your plan. `get_mentions` and `analyze_text` are on the Professional plan only. The plans are at [adanos.com/pricing](https://adanos.com/pricing).
+Each tool call costs API calls from the monthly quota of your plan. `get_mentions` and `analyze_text` are on the Professional plan only. On the other plans the server leaves the two tools out of the tool list. The plans are at [adanos.com/pricing](https://adanos.com/pricing).
 
 ## Install
 
@@ -64,7 +64,7 @@ Add a remote MCP server with this URL:
 https://adanos.com/mcp
 ```
 
-The transport is Streamable HTTP. Sign-in uses OAuth. The client discovers the OAuth endpoints from the server.
+The transport is Streamable HTTP. Sign-in uses OAuth. The client finds the OAuth endpoints through the server. A client without OAuth can send an Adanos API key in the `Authorization: Bearer` header or the `x-api-key` header.
 
 ## Tools
 
@@ -78,7 +78,7 @@ The transport is Streamable HTTP. Sign-in uses OAuth. The client discovers the O
 | `search` | Find a stock or ETF by name or ticker | 1 |
 | `get_mentions` | The latest posts about one stock on one source. Professional plan only | 1 |
 | `analyze_text` | The sentiment of a finance text. Professional plan only | 1 |
-| `get_usage` | Your plan and the calls you have left | 0 when signed in |
+| `get_usage` | Your plan and the calls you have left | 0 when signed in, 1 with an API key |
 
 ## Data and privacy
 
@@ -99,7 +99,7 @@ The plugin sends your agent's tool calls to `https://adanos.com/mcp`. Nothing el
 | `.claude-plugin/marketplace.json` | Claude Code |
 | `.agents/plugins/marketplace.json` | Codex |
 | `skills/adanos/SKILL.md` | All clients |
-| `assets/icon.png` | The listings of the Anthropic and OpenAI directories |
+| `assets/icon.png` | The icon for directory listings |
 
 ## License
 
