@@ -1,6 +1,6 @@
 {
   "name": "adanos",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Buzz and sentiment of stocks and ETFs on Reddit, X, News and Polymarket.",
   "author": {
     "name": "Adanos Software GmbH",

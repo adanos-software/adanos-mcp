@@ -101,7 +101,7 @@ The plugin sends your agent's tool calls to `https://adanos.com/mcp`. Nothing el
 | File | Read by |
 | --- | --- |
 | `mcp.json` | Codex, Cursor (Agent Plugins format) |
-| `.mcp.json` | Claude Code, Grok Build. Same content as `mcp.json` |
+| `.mcp.json` | Claude Code, Grok Build. The same server as `mcp.json`, with the transport written as `http` |
 | `plugin.json` | Codex, Cursor (Agent Plugins format) |
 | `.claude-plugin/plugin.json` | Claude Code, Grok Build |
 | `.claude-plugin/marketplace.json` | Claude Code |

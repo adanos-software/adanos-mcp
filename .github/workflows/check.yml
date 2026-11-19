@@ -13,9 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Codex and Cursor read mcp.json, Claude Code and Grok Build read .mcp.json.
-      - name: mcp.json and .mcp.json are the same
-        run: cmp mcp.json .mcp.json
+      # Codex and Cursor read mcp.json (Agent Plugins: streamable-http). Claude Code and Grok Build read .mcp.json, and
+      # the Claude directory accepts only http, sse or ws there. Both name the same server.
+      - name: mcp.json and .mcp.json name the same server in their own format
+        run: |
+          test "$(jq -r '.mcpServers.adanos.url' mcp.json)" = "$(jq -r '.mcpServers.adanos.url' .mcp.json)"
+          test "$(jq -r '.mcpServers.adanos.type' mcp.json)" = streamable-http
+          test "$(jq -r '.mcpServers.adanos.type' .mcp.json)" = http
 
       - name: plugin.json and mcp.json follow the Agent Plugins schemas
         run: |
