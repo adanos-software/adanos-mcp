@@ -56,6 +56,12 @@ grok plugin install adanos-software/adanos-mcp --trust
 
 Start a new session. Open `/mcps`, select `adanos` and press `i` to sign in.
 
+### Kiro
+
+[Add to Kiro](https://kiro.dev/launch/mcp/add?name=adanos&config=%7B%22url%22%3A%22https%3A//adanos.com/mcp%22%2C%22disabled%22%3Afalse%2C%22autoApprove%22%3A%5B%5D%7D)
+
+Kiro signs you in with OAuth in the browser.
+
 ### Other clients
 
 Add a remote MCP server with this URL:
