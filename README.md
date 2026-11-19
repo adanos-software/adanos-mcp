@@ -1,5 +1,7 @@
 # Adanos plugin
 
+[![Adanos MCP connector – tool definition quality and endpoint health on Glama](https://glama.ai/mcp/connectors/com.adanos/mcp/badges/score.svg)](https://glama.ai/mcp/connectors/com.adanos/mcp)
+
 This plugin connects your agent to [Adanos](https://adanos.com). Adanos measures how often stocks and ETFs are discussed on Reddit, X, News and Polymarket. It also measures how positive or negative that talk is.
 
 With the plugin your agent can answer questions like these:
