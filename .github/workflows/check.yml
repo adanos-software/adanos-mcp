@@ -22,6 +22,12 @@ jobs:
           pipx run check-jsonschema==0.39.0 --schemafile https://agent-plugins.org/schemas/1.0.0/plugin.schema.json plugin.json
           pipx run check-jsonschema==0.39.0 --schemafile https://agent-plugins.org/schemas/1.0.0/mcp.schema.json mcp.json
 
+      # The official MCP Registry lists server.json. Its remote is the same server as mcp.json.
+      - name: server.json follows the registry schema and names the same URL
+        run: |
+          pipx run check-jsonschema==0.39.0 --schemafile "$(jq -r '."$schema"' server.json)" server.json
+          test "$(jq -r '.remotes[0].url' server.json)" = "$(jq -r '.mcpServers.adanos.url' mcp.json)"
+
       # https://adanos.com/mcp serves stocks only. The directories of Anthropic and OpenAI allow no upgrade prompts.
       - name: No crypto and no upsell words
         run: "! git grep -n -i -E 'crypto|coin|bitcoin|upgrade|unlock' -- . ':!.github'"
