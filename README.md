@@ -108,7 +108,7 @@ The plugin sends your agent's tool calls to `https://adanos.com/mcp`. Nothing el
 | `.agents/plugins/marketplace.json` | Codex |
 | `skills/adanos/SKILL.md` | All clients |
 | `server.json` | The [official MCP Registry](https://registry.modelcontextprotocol.io) as `com.adanos/mcp` |
-| `assets/icon.png` | The icon for directory listings |
+| `assets/` | The icon for directory listings |
 
 ## License
 
